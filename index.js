@@ -8,8 +8,8 @@ const authJwt = require("./helpers/jwt");
 const app = express();
 
 // permisões cors
-app.use(cors())
-app.options('*',cors())
+// app.use(cors())
+// app.options('*',cors())
 
 // models
 const Product = require('./models/products')
@@ -40,11 +40,7 @@ app.use(`${api}/users`, usersRouter)
 
 // start server
 mongoose
-  .connect(process.env.CONNECTION_URL,{
-    userNewUrlParser:true,
-    useUninfiedTopology:true,
-    dbName:'node_mongo'
-  })
+  .connect(process.env.CONNECTION_URL)
   .then(() => {
     console.log("Connected to mongo");
   })
