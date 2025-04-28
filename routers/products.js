@@ -70,7 +70,7 @@ router.post("/", async (req, res) => {
       images,
       brand,
       price,
-      category,
+      category:category._id,
       countInStock,
       rating,
       numReviews,
