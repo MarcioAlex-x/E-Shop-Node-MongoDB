@@ -38,8 +38,6 @@ const productSchema = mongoose.Schema({
   countInStock: {
     type: Number,
     required: true,
-    min: 0,
-    max: 255,
   },
   rating: {
     type: Number,
