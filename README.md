@@ -1,8 +1,4 @@
-Perfeito, agora com todas as informações que você passou, aqui está o **README** em inglês, pronto para o GitHub:
-
----
-
-# E-Shop API
+# E-Shop API - Inglês
 
 Welcome to the **E-Shop API**!  
 This project provides a simple, ready-to-use online REST API for product and category management, built with **Node.js**, **Express**, and **MongoDB**.
@@ -114,3 +110,122 @@ curl -H "Authorization: Bearer YOUR_TOKEN_HERE" https://eshop-tau-two.vercel.app
 # License
 
 This project is available for educational and demonstration purposes.
+
+---
+
+# API E-Shop - Português
+
+Bem-vindo à **API E-Shop**!  
+Este projeto oferece uma API REST online, simples e pronta para uso, para gerenciamento de produtos e categorias, construída com **Node.js**, **Express** e **MongoDB**.
+
+Esta API foi desenvolvida para fins de demonstração (como em processos seletivos) e está hospedada na **Vercel**.
+
+## URL Base
+```
+https://eshop-tau-two.vercel.app/api/v1
+```
+
+## Endpoints Públicos
+
+- **Listar todas as categorias**  
+  `GET /categories`
+  
+- **Listar todos os produtos**  
+  `GET /products`
+  
+- **Obter uma categoria específica pelo ID**  
+  `GET /categories/:id`
+  
+- **Obter um produto específico pelo ID**  
+  `GET /products/:id`
+
+## Autenticação
+
+Para acessar as rotas protegidas, é necessário **fazer login** utilizando as credenciais abaixo:
+
+```
+POST /users/login
+```
+
+Body:
+```json
+{
+  "email": "bia@email.com",
+  "password": "123456789"
+}
+```
+
+- Após o login, um **token JWT** será retornado.
+- Para acessar as rotas protegidas, envie o token no cabeçalho `Authorization`:
+
+```
+Authorization: Bearer SEU_TOKEN_AQUI
+```
+
+Você também pode **registrar** um novo usuário utilizando:
+
+```
+POST /users/register
+```
+
+## Endpoints Protegidos
+
+### (GET) Rotas de Usuários
+- `GET /users/` – Listar todos os usuários
+- `GET /users/:id` – Buscar um usuário específico pelo ID
+
+### (POST) Criar
+- `POST /products` – Criar um novo produto
+- `POST /categories` – Criar uma nova categoria
+
+### (PUT) Atualizar
+- `PUT /products` – Atualizar um produto existente
+- `PUT /categories` – Atualizar uma categoria existente
+
+### (DELETE) Deletar
+- `DELETE /products` – Deletar um produto
+- `DELETE /categories` – Deletar uma categoria
+
+## Endpoints Especiais
+
+- **Listar produtos em destaque**  
+  `GET /products/featured/products`
+
+- **Listar uma quantidade específica de produtos em destaque**  
+  `GET /products/featured/products/:counts`
+
+## Observações
+
+- **Banco de Dados**: Este projeto utiliza **MongoDB**, portanto as respostas são retornadas em formato JSON baseado em coleções.
+- **Tratamento de Erros**: Se algo der errado, a API retorna:
+  ```json
+  {
+    "message": "Something went wrong"
+  }
+  ```
+- **Sem Limites de Requisições**: Não há limitação de requisições configurada.
+- **Ferramentas Recomendadas**: Utilize ferramentas como **Postman** ou **Insomnia** para testar os endpoints da API.
+
+---
+
+## Exemplo: Buscar todos os produtos
+
+```bash
+curl https://eshop-tau-two.vercel.app/api/v1/products
+```
+
+## Exemplo: Requisição Protegida (com Token)
+
+```bash
+curl -H "Authorization: Bearer SEU_TOKEN_AQUI" https://eshop-tau-two.vercel.app/api/v1/users/
+```
+
+---
+
+# Licença
+
+Este projeto está disponível para fins educacionais e de demonstração.
+
+---
+
+# Desenvolvida por Alex Freitas - 2025
